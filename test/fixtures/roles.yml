@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id          :integer          not null, primary key
+#  cargo       :string
+#  descripcion :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  cargo: MyString
+  descripcion: MyText
+
+two:
+  cargo: MyString
+  descripcion: MyText

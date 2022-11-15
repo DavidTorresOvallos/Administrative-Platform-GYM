@@ -1,0 +1,28 @@
+<h1>Lista de Tipos</h1>
+<a href="<%= new_type_path%>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+    <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Crear Tipo</span>
+</a>
+<br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @type.freeze do |type|%>
+      <tr>
+        <td><%= type.id%></td>
+        <td><%= type.nombre%></td>
+        <td><%= type.descripcion%></td>
+        <td><%= link_to "Detalles", type_path(type), class: 'btn btn-primary' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

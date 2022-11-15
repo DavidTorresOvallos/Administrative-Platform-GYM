@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: invoices
+#
+#  id                 :integer          not null, primary key
+#  monto              :integer
+#  fecha              :datetime
+#  detalle            :string
+#  iva                :decimal(, )
+#  valor              :decimal(, )
+#  id_recibtable_type :string           not null
+#  id_recibtable_id   :integer          not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+one:
+  monto: 1
+  fecha: 2022-11-09 16:51:39
+  detalle: MyString
+  iva: 9.99
+  valor: 9.99
+  id_recibtable: one
+  id_recibtable_type: Id recibtable
+
+two:
+  monto: 1
+  fecha: 2022-11-09 16:51:39
+  detalle: MyString
+  iva: 9.99
+  valor: 9.99
+  id_recibtable: two
+  id_recibtable_type: Id recibtable

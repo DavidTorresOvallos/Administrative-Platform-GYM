@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: plans
+#
+#  id            :integer          not null, primary key
+#  nombre        :string
+#  fecha_inicial :date
+#  fecha_final   :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  gym_id        :integer          not null
+#
+
+one:
+  nombre: MyString
+  fecha_inicial: 2022-11-09
+  fecha_final: 2022-11-09
+
+two:
+  nombre: MyString
+  fecha_inicial: 2022-11-09
+  fecha_final: 2022-11-09
