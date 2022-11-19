@@ -8,3 +8,35 @@
 
   <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles del Tipo</h1>
+      <%= link_to "Regresar al listado de Productos", products_path, class: 'btn btn-primary'%>
+      <%= link_to "Editar Producto", edit_product_path(@products), class: 'btn btn-primary'%>
+      <%= link_to "Destruir Producto", @product, method: :delete, class: 'btn btn-danger' %>
+      <%= link_to "Crear Recibo"%>
+      <div class="card">
+        <table class="table">
+          <tr>
+            <td><b>Nombre del Producto:</b></td>
+            <td><%= @prodct.nombre %></td>
+          </tr>
+          <tr>
+            <td><b>Descripción:</b></td>
+            <td><%= @product.descripcion %></td>
+          </tr>
+          <tr>
+            <td><b>Tipo de Producto:</b></td>
+            <td><%= @product.id_productable %></td>
+          </tr>
+          <tr>
+            <td><b>Fecha de Creación:</b></td>
+            <td><%= @product.created_at %></td>
+          </tr>
+        </table>
+      </div>
+
+  </div>
+</div>

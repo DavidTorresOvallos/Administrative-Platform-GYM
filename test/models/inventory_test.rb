@@ -2,14 +2,14 @@
 #
 # Table name: inventories
 #
-#  id             :integer          not null, primary key
-#  tipo_maquina   :string
-#  grupo_muscular :string
-#  fecha_compra   :date
-#  costo          :decimal(, )
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  gym_id         :integer          not null
+#  id                   :integer          not null, primary key
+#  grupo_muscular       :string
+#  fecha_compra         :date
+#  costo                :decimal(, )
+#  id_inventorable_type :string           not null
+#  id_inventorable_id   :integer          not null
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
 #
 require "test_helper"
 

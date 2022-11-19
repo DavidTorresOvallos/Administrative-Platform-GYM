@@ -6,6 +6,7 @@ class CreateInvoices < ActiveRecord::Migration[7.0]
       t.string :detalle
       t.decimal :iva
       t.decimal :valor
+      t.integer :tipo
       t.references :id_recibtable, polymorphic: true, null: false
 
       t.timestamps

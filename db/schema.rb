@@ -63,14 +63,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_133942) do
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.string "tipo_maquina"
     t.string "grupo_muscular"
     t.date "fecha_compra"
     t.decimal "costo"
+    t.string "id_inventorable_type", null: false
+    t.integer "id_inventorable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "gym_id", null: false
-    t.index ["gym_id"], name: "index_inventories_on_gym_id"
+    t.index ["id_inventorable_type", "id_inventorable_id"], name: "index_inventories_on_id_inventorable"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_133942) do
     t.string "detalle"
     t.decimal "iva"
     t.decimal "valor"
+    t.integer "tipo"
     t.string "id_recibtable_type", null: false
     t.integer "id_recibtable_id", null: false
     t.datetime "created_at", null: false
@@ -120,6 +121,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_133942) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "inventories", "gyms"
   add_foreign_key "plans", "gyms"
 end

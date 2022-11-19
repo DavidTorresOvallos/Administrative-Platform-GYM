@@ -12,5 +12,7 @@
 #
 class Plan < ApplicationRecord
   belongs_to :gyms
-  has_many :clients  
+  has_many :clients
+
+  validates :nombre, presence: true
 end

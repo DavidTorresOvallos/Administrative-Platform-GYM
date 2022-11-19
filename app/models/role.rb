@@ -10,4 +10,8 @@
 #
 class Role < ApplicationRecord
   has_many :employees
+
+  validates_presence_of :cargo, message: 'inválido, por favor ingrese un cargo'
+  validates_uniqueness_of :cargo, message: 'existente, por favor ingrese un nuevo cargo'
+  validates :employees, inverse_of: :rols
 end

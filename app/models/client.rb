@@ -27,4 +27,10 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :id_clientable, polymorphic: true
   enum tipo_documento: [:"C.C", :"C.E", :"T.I"]
+
+  validates :email, presence: true
+  validates :nombre, presence: true
+  validates :apellido_uno, presence: true
+  validates :apellido_dos, presence: true
+  validates :gyms, presence: true
 end

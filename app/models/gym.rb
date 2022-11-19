@@ -15,4 +15,9 @@ class Gym < ApplicationRecord
   has_many :plans
   has_many :products
   has_many :invoices
+
+  validates :nombre, presence: true
+  validates :direccion, presence: true
+  validates :employees, inverse_of: :gyms
+  validates :clients, inverse_of: :gyms
 end

@@ -28,4 +28,11 @@ class Employee < ApplicationRecord
 
   belongs_to :id_empleatable, polymorphic: true
   enum tipo_documento: [:"C.C", :"C.E", :"T.I"]
+
+  validates :email, presence: true
+  validates :nombre, presence: true
+  validates :apellido_uno, presence: true
+  validates :apellido_dos, presence: true
+  validates :gyms, presence: true
+  validates :rols, presence: true
 end

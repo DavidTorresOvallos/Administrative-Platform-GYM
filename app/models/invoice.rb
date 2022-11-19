@@ -15,4 +15,8 @@
 #
 class Invoice < ApplicationRecord
   belongs_to :id_recibtable, polymorphic: true
+  MovementType = {add: 0, remove: 1}
+  validates :monto, presence: true, numericality: true
+
+  enum tipo: [:"Compra", :"Venta"]
 end
