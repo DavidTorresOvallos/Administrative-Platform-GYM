@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'gyms/index'
+  get 'gyms/show'
+  get 'gyms/new'
+  get 'gyms/edit'
+  get 'gyms/create'
+  get 'gyms/update'
+  get 'gyms/destroy'
   get 'session/index'
   resources :types
 #  devise_for :clients
@@ -7,6 +14,8 @@ Rails.application.routes.draw do
       get :new_invoice
     end
   end
+
+  get 'session/index'
   root 'session#index'
 #  devise_for :employees
   get 'dashboard/index'

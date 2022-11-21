@@ -1,31 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Imports -->
-    <link rel="stylesheet" href="app/assets/stylesheets/Login.css">
+<section class="background-radial-gradient overflow-hidden">
+<style>
+  body {
+  heigh:665px;
+  background-image: url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+</style>
+  <body class="container-form">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            InExtremis <br />
+            <span style="color: hsl(218, 81%, 75%)">La senda de los grandes</span>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            “Lo que no se define no se puede medir.
+            Lo que no se mide, no se puede mejorar.
+            Lo que no se mejora, se degrada siempre”.
+          </p>
+          <p>Lord Kevlin.</p>
+        </div>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container-form">
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-        <form action="" class="form">
-            <h1 class="title-login">Welcome</h1>
-            <input class="input input-email" id="input-email" type="email" placeholder="Ingrese email" required>
-            <input class="input" id="input-password" type="password" placeholder="Ingrese password" required>
-            <button class="button button-start" id="start">Ingresar</button>
-            <div class="line">
-                <hr>  <span> o </span> <hr>
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" id="form3Example1" class="form-control" />
+                      <label class="form-label" for="form3Example1">Nombre</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text" id="form3Example2" class="form-control" />
+                      <label class="form-label" for="form3Example2">Apellido</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Email</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4" class="form-control" />
+                  <label class="form-label" for="form3Example4">Contraseña</label>
+                </div>
+
+                <!-- Submit button -->
+                <%=link_to "Ingresar", gyms_index_path, class: 'btn btn-primary btn-block mb-4'%>
+
+              </form>
             </div>
-            <button class="button" id="register">Registrarse</button>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+  </body>
+
+</section>
+<!-- Section: Design Block -->
