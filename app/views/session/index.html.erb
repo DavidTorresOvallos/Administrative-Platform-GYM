@@ -1,11 +1,71 @@
 <section class="background-radial-gradient overflow-hidden">
 <style>
   body {
-  heigh:665px;
-  background-image: url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
   background-size: cover;
-  background-repeat:no-repeat;
-  background-position: center center;
+  background-position: center;
+}
+
+.container-page{
+  height: 63vh;
+  width: 35vw;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  backdrop-filter: blur(8px);
+}
+
+.login-container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color white;
+}
+
+.input-line-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.name-input{
+  font-size: 12px;
+}
+
+.input-line{
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #cbcbcb;
+  outline: none;
+  margin_bottom: 1rem;
+  color: white;
+}
+
+.login-container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
 }
 </style>
   <body class="container-form">
@@ -28,41 +88,43 @@
           <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
           <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-          <div class="card bg-glass">
-            <div class="card-body px-4 py-5 px-md-5">
-              <form>
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">Nombre</label>
+          <div class="container-page">
+            <div class="input-line-container">
+              <div class="card-body px-4 py-5 px-md-5">
+                <form>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1" class="input-line" />
+                        <label class="form-label" for="form3Example1">Nombre</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example2" class="input-line" />
+                        <label class="form-label" for="form3Example2">Apellido</label>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Apellido</label>
-                    </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="input-line" />
+                    <label class="form-label" for="form3Example3">Email</label>
                   </div>
-                </div>
 
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Email</label>
-                </div>
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4" class="input-line" />
+                    <label class="form-label" for="form3Example4">Contraseña</label>
+                  </div>
 
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Contraseña</label>
-                </div>
+                  <!-- Submit button -->
+                  <%=link_to "Ingresar", gyms_index_path, class: 'btn btn-primary btn-block mb-4'%>
 
-                <!-- Submit button -->
-                <%=link_to "Ingresar", gyms_index_path, class: 'btn btn-primary btn-block mb-4'%>
-
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
