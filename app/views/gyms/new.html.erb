@@ -1,2 +1,9 @@
-<h1>Gyms#new</h1>
-<p>Find me in app/views/gyms/new.html.erb</p>
+<h1>New gym</h1>
+
+<%= render "form", gym: @gym %>
+
+<br>
+
+<div>
+  <%= link_to "Back to gyms", gyms_path %>
+</div>

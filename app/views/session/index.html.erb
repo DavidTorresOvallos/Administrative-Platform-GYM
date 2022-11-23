@@ -68,6 +68,7 @@
   color: white;
 }
 </style>
+<button type="button" class="btn btn-dark btn-xs">Dark</button>
   <body class="container-form">
     <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
@@ -116,12 +117,12 @@
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4" class="input-line" />
+                    <input type="password" id="form3Example4" class="input-line " />
                     <label class="form-label" for="form3Example4">Contraseña</label>
                   </div>
 
                   <!-- Submit button -->
-                  <%=link_to "Ingresar", gyms_index_path, class: 'btn btn-primary btn-block mb-4'%>
+                  <%=link_to "Ingresar", gyms_path, class: 'btn btn-primary btn-block mb-4'%>
 
                 </form>
               </div>

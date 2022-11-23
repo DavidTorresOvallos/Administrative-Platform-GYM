@@ -1,38 +1,48 @@
 require "test_helper"
 
 class GymsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get gyms_index_url
-    assert_response :success
+  setup do
+    @gym = gyms(:one)
   end
 
-  test "should get show" do
-    get gyms_show_url
+  test "should get index" do
+    get gyms_url
     assert_response :success
   end
 
   test "should get new" do
-    get gyms_new_url
+    get new_gym_url
+    assert_response :success
+  end
+
+  test "should create gym" do
+    assert_difference("Gym.count") do
+      post gyms_url, params: { gym: { direccion: @gym.direccion, nombre: @gym.nombre } }
+    end
+
+    assert_redirected_to gym_url(Gym.last)
+  end
+
+  test "should show gym" do
+    get gym_url(@gym)
     assert_response :success
   end
 
   test "should get edit" do
-    get gyms_edit_url
+    get edit_gym_url(@gym)
     assert_response :success
   end
 
-  test "should get create" do
-    get gyms_create_url
-    assert_response :success
+  test "should update gym" do
+    patch gym_url(@gym), params: { gym: { direccion: @gym.direccion, nombre: @gym.nombre } }
+    assert_redirected_to gym_url(@gym)
   end
 
-  test "should get update" do
-    get gyms_update_url
-    assert_response :success
-  end
+  test "should destroy gym" do
+    assert_difference("Gym.count", -1) do
+      delete gym_url(@gym)
+    end
 
-  test "should get destroy" do
-    get gyms_destroy_url
-    assert_response :success
+    assert_redirected_to gyms_url
   end
 end

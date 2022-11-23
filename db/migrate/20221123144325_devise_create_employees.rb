@@ -33,13 +33,12 @@ class DeviseCreateEmployees < ActiveRecord::Migration[7.0]
       # t.datetime :locked_at
 
       t.string :nombre
-      t.string :apellido_uno
-      t.string :apellido_dos
+      t.string :apellido
       t.integer :tipo_documento
       t.string :num_documento
       t.date :fecha_nacimiento
       t.date :fecha_ingreso
-      t.references :id_empleatable, polymorphic: true, null: false
+      t.references :id_employetable, polymorphic: true, null: false
 
       t.timestamps null: false
     end

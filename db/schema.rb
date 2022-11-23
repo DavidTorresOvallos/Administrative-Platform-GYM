@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_133942) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_184425) do
   create_table "clients", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,18 +40,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_133942) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "nombre"
-    t.string "apellido_uno"
-    t.string "apellido_dos"
+    t.string "apellido"
     t.integer "tipo_documento"
     t.string "num_documento"
     t.date "fecha_nacimiento"
     t.date "fecha_ingreso"
-    t.string "id_empleatable_type", null: false
-    t.integer "id_empleatable_id", null: false
+    t.string "id_employetable_type", null: false
+    t.integer "id_employetable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_employees_on_email", unique: true
-    t.index ["id_empleatable_type", "id_empleatable_id"], name: "index_employees_on_id_empleatable"
+    t.index ["id_employetable_type", "id_employetable_id"], name: "index_employees_on_id_employetable"
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
