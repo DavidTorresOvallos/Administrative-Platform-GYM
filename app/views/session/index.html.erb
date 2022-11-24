@@ -1,5 +1,11 @@
 <section class="background-radial-gradient overflow-hidden">
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
   body {
   height: 100vh;
   width: 100%;
@@ -67,9 +73,54 @@
   flex-direction: column;
   color: white;
 }
+
+.button-register{
+  width: 30;
+  height: 45px;
+  border-radius: 45px;
+  background: rgba(255,255,255,0.14);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.5;
+}
+
+.button-second{
+  width: 25vh;
+  height: 30px;
+  border-radius: 55px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button-second:hover{
+  opacity: 1;
+}
 </style>
-<button type="button" class="btn btn-dark btn-xs">Dark</button>
   <body class="container-form">
+    <div>
+      <% if signed_in? %>
+        <%= link_to "Salir", destroy_user_session_path,method: :delete %>
+      <% else %>
+        <%= link_to "Registrar Gym", new_employee_registration_path, class: 'button-second'%>
+      <% end %>
+    </div>
     <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
@@ -130,7 +181,9 @@
           </div>
         </div>
       </div>
+      <div>
     </div>
+
   </body>
 
 </section>
