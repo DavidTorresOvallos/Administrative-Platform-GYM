@@ -8,6 +8,7 @@
 #  detalle            :string
 #  iva                :decimal(, )
 #  valor              :decimal(, )
+#  tipo               :integer
 #  id_recibtable_type :string           not null
 #  id_recibtable_id   :integer          not null
 #  created_at         :datetime         not null

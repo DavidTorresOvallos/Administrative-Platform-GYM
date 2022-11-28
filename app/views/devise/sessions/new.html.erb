@@ -26,6 +26,8 @@
   background-color: rgba(255, 255, 255, 0.01);
   border: 1px solid white;
   backdrop-filter: blur(8px);
+  min-width: 300px;
+  min-height: 350px
 }
 
 .login-container{
@@ -89,7 +91,7 @@
 }
 
 .button-second{
-  width: 25vh;
+  width: calc(50% – 20px);
   height: 30px;
   border-radius: 55px;
   background: rgba(255,255,255,0.15);
@@ -105,7 +107,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .button-second:hover{
@@ -120,78 +121,89 @@
     font-family: arial;
 }
 </style>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
-  <section class="background-radial-gradient overflow-hidden">
-    <body class="container-form">
-      <div>
-        <% if signed_in? %>
-          <%= link_to "Salir", destroy_user_session_path,method: :delete %>
-        <% else %>
-          <%= link_to "Registrar Gym", new_employee_registration_path, class: 'button-second'%>
-        <% end %>
-      </div>
-      <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-        <div class="row gx-lg-5 align-items-center mb-5">
-          <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-              InExtremis <br />
-              <span style="color: hsl(218, 81%, 75%)">La senda de los grandes</span>
-            </h1>
-            <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-              “Lo que no se define no se puede medir.
-              Lo que no se mide, no se puede mejorar.
-              Lo que no se mejora, se degrada siempre”.
-            </p>
-            <p>Lord Kevlin.</p>
+<!DOCTYPE html>
+<html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InExtremis</title>
+  </head>
+  <body>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+      <section class="background-radial-gradient overflow-hidden">
+        <body class="container-form">
+          <div>
+            <% if signed_in? %>
+              <%= link_to "Salir", destroy_user_session_path,method: :delete %>
+            <% else %>
+              <%= link_to "Registrar Gym", new_employee_registration_path, class: 'button-second'%>
+            <% end %>
           </div>
+          <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+              <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                  InExtremis <br />
+                  <span style="color: hsl(218, 81%, 75%)">La senda de los grandes</span>
+                </h1>
+                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                  “Lo que no se define no se puede medir.
+                  Lo que no se mide, no se puede mejorar.
+                  Lo que no se mejora, se degrada siempre”.
+                </p>
+                <p>Lord Kevlin.</p>
+              </div>
 
-          <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-            <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-            <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+              <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-            <div class="container-page">
-              <div class="input-line-container">
-                <div class="card-body px-4 py-5 px-md-5">
-                  <form>
+                <div class="container-page">
+                  <div class="input-line-container">
+                    <div class="card-body px-4 py-5 px-md-5">
+                      <form>
 
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-line' %>
-                      <label class="form-label" for="form3Example3">Email</label>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-line' %>
+                          <label class="form-label" for="form3Example3">Email</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                          <%= f.password_field :password, autocomplete: "current-password", class: 'input-line' %>
+                          <label class="form-label" for="form3Example4">Contraseña</label>
+                        </div>
+                        <% if devise_mapping.rememberable? %>
+                          <div class="field">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :Recordar_Cuenta %>
+                          </div>
+                        <% end %>
+
+                        <!-- Submit button -->
+                        <div class="actions">
+                          <%= f.submit "Ingresar", class: 'button-register' %>
+                        </div>
+                        <div class="actions">
+                          <%= render "devise/shared/links"%>
+                        </div>
+
+                      </form>
                     </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                      <%= f.password_field :password, autocomplete: "current-password", class: 'input-line' %>
-                      <label class="form-label" for="form3Example4">Contraseña</label>
-                    </div>
-                    <% if devise_mapping.rememberable? %>
-                      <div class="field">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label :Recordar_Cuenta %>
-                      </div>
-                    <% end %>
-
-                    <!-- Submit button -->
-                    <div class="actions">
-                      <%= f.submit "Ingresar", class: 'button-register' %>
-                    </div>
-                    <div class="actions">
-                      <%= render "devise/shared/links"%>
-                    </div>
-
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
+            <div>
+
           </div>
-        </div>
-        <div>
+        </body>
 
-      </div>
-    </body>
+      </section>
+      <!-- Section: Design Block -->
 
-  </section>
-  <!-- Section: Design Block -->
-
-<% end %>
+    <% end %>
+  </body>
+</html>

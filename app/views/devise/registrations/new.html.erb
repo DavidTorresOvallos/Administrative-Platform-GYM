@@ -1,5 +1,119 @@
 <h2>Sign up</h2>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+  body {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.container-page{
+  height: 63vh;
+  width: 35vw;
+  border-radius: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  backdrop-filter: blur(8px);
+}
+
+.login-container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color white;
+}
+
+.input-line-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.name-input{
+  font-size: 12px;
+}
+
+.input-line{
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #cbcbcb;
+  outline: none;
+  margin_bottom: 1rem;
+  color: white;
+}
+
+.login-container{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.button-register{
+  width: 30;
+  height: 45px;
+  border-radius: 45px;
+  background: rgba(255,255,255,0.14);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.5;
+}
+
+.button-second{
+  width: 25vh;
+  height: 30px;
+  border-radius: 55px;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button-second:hover{
+  opacity: 1;
+}
+</style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo:false }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -27,3 +141,75 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<section class="background-radial-gradient overflow-hidden">
+
+  <body class="container-form">
+    <div>
+      <% if signed_in? %>
+        <%= link_to "Salir", destroy_user_session_path,method: :delete %>
+      <% else %>
+        <%= link_to "Registrar Gym", new_employee_registration_path, class: 'button-second'%>
+      <% end %>
+    </div>
+    <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          InExtremis <br />
+          <span style="color: hsl(218, 81%, 75%)">La senda de los grandes</span>
+        </h1>
+    </div>
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 d-flex align-items-center mb-5">
+
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+          <div class="container-page">
+            <div class="input-line-container">
+              <div class="card-body px-4 py-5 px-md-5">
+                <form>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1" class="input-line" />
+                        <label class="form-label" for="form3Example1">Nombre</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example2" class="input-line" />
+                        <label class="form-label" for="form3Example2">Apellido</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="input-line" />
+                    <label class="form-label" for="form3Example3">Email</label>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4" class="input-line " />
+                    <label class="form-label" for="form3Example4">Contraseña</label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <%=link_to "Ingresar", gyms_path, class: 'btn btn-primary btn-block mb-4'%>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+    </div>
+  </body>
+
+</section>
+<!-- Section: Design Block -->

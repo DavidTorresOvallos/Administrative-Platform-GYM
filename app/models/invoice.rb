@@ -8,6 +8,7 @@
 #  detalle            :string
 #  iva                :decimal(, )
 #  valor              :decimal(, )
+#  tipo               :integer
 #  id_recibtable_type :string           not null
 #  id_recibtable_id   :integer          not null
 #  created_at         :datetime         not null
@@ -15,6 +16,7 @@
 #
 class Invoice < ApplicationRecord
   belongs_to :id_recibtable, polymorphic: true
+  belongs_to :gyms
   MovementType = {add: 0, remove: 1}
   validates :monto, presence: true, numericality: true
 

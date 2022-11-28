@@ -12,6 +12,7 @@
 #
 class Product < ApplicationRecord
   belongs_to :id_productable, polymorphic: true
+  belongs_to :gyms
 
   validates_presence_of :nombre, message: 'inválido, por favor ingrese un producto'
   validates :types, presence: true

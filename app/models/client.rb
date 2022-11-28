@@ -25,6 +25,8 @@ class Client < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  belongs_to :gyms       
   belongs_to :id_clientable, polymorphic: true
   enum tipo_documento: [:"C.C", :"C.E", :"T.I"]
 
