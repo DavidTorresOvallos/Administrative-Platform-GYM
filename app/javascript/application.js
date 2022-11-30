@@ -4,3 +4,5 @@ import "controllers"
 import ".jquery.min.js"
 import "./bootstrap.bundle.min.js"
 import "./sb_admin-2.min.js"
+
+//= require jquery_nested_form

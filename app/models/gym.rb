@@ -14,6 +14,9 @@ class Gym < ApplicationRecord
   has_many :inventories
   has_many :invoices
   has_many :plans
-
+  validates_presence_of :nombre, message: 'inválido, por favor ingrese un nombre'
   
+  def to_s
+    nombre
+  end
 end

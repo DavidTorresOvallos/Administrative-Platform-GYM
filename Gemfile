@@ -75,3 +75,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "nested_form", "~> 0.3.2"

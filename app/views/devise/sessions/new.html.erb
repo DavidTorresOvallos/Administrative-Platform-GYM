@@ -7,16 +7,18 @@
 
   body {
   height: 100vh;
-  width: 100%;
+  width: 100%%;
   align-items: center;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
   background-size: cover;
   background-position: center;
 }
 
+
+
 .container-page{
   height: 63vh;
-  width: 30vw;
+  width: 10px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -33,7 +35,8 @@
 .login-container{
   width: 100%;
   height: fit-content;
-  display: flex;
+  flex: 2;
+  
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -70,6 +73,8 @@
   width: 100%;
   height: fit-content;
   display: flex;
+  flex-wrap: wrap;
+  padding-right: revert;
   justify-content: center;
   flex-direction: column;
   color: white;
@@ -121,14 +126,6 @@
     font-family: arial;
 }
 </style>
-<!DOCTYPE html>
-<html">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>InExtremis</title>
-  </head>
   <body>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
       <section class="background-radial-gradient overflow-hidden">
@@ -155,7 +152,7 @@
                 <p>Lord Kevlin.</p>
               </div>
 
-              <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+              <div class="login-container">
                 <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                 <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
@@ -206,4 +203,3 @@
 
     <% end %>
   </body>
-</html>
