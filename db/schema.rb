@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_184425) do
     t.datetime "remember_created_at"
     t.string "nombre"
     t.string "apellido"
-    t.integer "tipo_documento"
+    t.integer "tipo_documento", default: 0
     t.string "num_documento"
     t.date "fecha_nacimiento"
     t.date "fecha_ingreso"

@@ -7,7 +7,7 @@
 
   body {
   height: 100vh;
-  width: 100%%;
+  width: 100%;
   align-items: center;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1590487988256-9ed24133863e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80");
   background-size: cover;
@@ -125,6 +125,17 @@
     cursor: pointer;
     font-family: arial;
 }
+
+select {
+    border: 1px solid black;
+    background-color: rgba(255,255,255,0.10);
+    padding: 5px;
+    display: inline-flex;
+    border-radius: 8px;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+}
 </style>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo:false }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -132,7 +143,7 @@
 
     <body class="container-form">
       <div class="text-center " style="z-index: 10">
-          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          <h1 class="my-5 display-10 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
             InExtremis <br />
             <span style="color: hsl(218, 81%, 75%)">La senda de los grandes</span>
           </h1>
@@ -165,8 +176,14 @@
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example2" class="input-line" />
-                          <label class="form-label" for="form3Example2">Tipo de Documento</label>
+                          <div class="col-md-10 mb-8">
+                            <select class="aelect" name="" id="">
+                              <option>C.C</option>
+                              <option>C.E</option>
+                              <option>T.I</option>
+                            </select>
+                            <label class="form-label" for="form3Example2">Tipo de Documento</label>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
@@ -177,13 +194,13 @@
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example2" class="input-line" />
+                          <input type="date" id="form3Example2" class="input-line" />
                           <label class="form-label" for="form3Example2">Fecha de Nacimiento</label>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example2" class="input-line" />
+                          <input type="date" id="form3Example2" class="input-line" />
                           <label class="form-label" for="form3Example2">Fecha de Ingreso</label>
                         </div>
                       </div>
