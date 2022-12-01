@@ -176,13 +176,8 @@ select {
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <div class="col-md-10 mb-8">
-                            <select class="aelect" name="" id="">
-                              <option>C.C</option>
-                              <option>C.E</option>
-                              <option>T.I</option>
-                            </select>
-                            <label class="form-label" for="form3Example2">Tipo de Documento</label>
+                          <div class="select">
+                          <%= select_tag :tipo_documento, options_for_select(f.statuses) %>
                           </div>
                         </div>
                       </div>
