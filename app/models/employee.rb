@@ -27,7 +27,7 @@ class Employee < ApplicationRecord
 
   belongs_to :gyms
   belongs_to :id_employetable, polymorphic: true
-  enum tipo_documento: { "C.C": 0, "C.E": 1, "T.I": 2 }
+  enum tipo_documento: { CC: 0, CE: 1, TI: 2 }
 
 
   validates :gyms, presence: true

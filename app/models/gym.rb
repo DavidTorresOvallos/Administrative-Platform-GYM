@@ -16,7 +16,5 @@ class Gym < ApplicationRecord
   has_many :plans
   validates_presence_of :nombre, message: 'inválido, por favor ingrese un nombre'
   
-  def to_s
-    nombre
-  end
+  accepts_nested_attributes_for: employees
 end

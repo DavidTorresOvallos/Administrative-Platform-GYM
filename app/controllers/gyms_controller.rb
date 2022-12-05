@@ -13,6 +13,7 @@ class GymsController < ApplicationController
   # GET /gyms/new
   def new
     @gym = Gym.new
+    @employees = @gym.employees.build
   end
 
   # GET /gyms/1/edit

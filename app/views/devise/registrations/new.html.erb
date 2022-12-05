@@ -164,43 +164,58 @@ select {
                     <div class="row">
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example1" class="input-line" />
+                          <%= f.text_field :nombre, class: 'input-line'%>
                           <label class="form-label" for="form3Example1">Nombre</label>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example2" class="input-line" />
+                          <%= f.text_field :apellido, class: 'input-line'%>
                           <label class="form-label" for="form3Example2">Apellido</label>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
                           <div class="select">
-                          <%= select_tag :tipo_documento, options_for_select(f.statuses) %>
+                              <select id="employee_tipo_documento" name="employee[tipo_documento]">
+                                <option value=""></option>
+                                <option value="C.C">C.C</option>
+                                <option value="C.E">C.E</option>
+                                <option value="T.I">T.I</option>
+                              </select>
+                            <label class="form-label" for="form3Example2">Tipo de Documento</label>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="text" id="form3Example2" class="input-line" />
+                          <%= f.text_field :num_documento, class: 'input-line'%>
                           <label class="form-label" for="form3Example2">Número de Documento</label>
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="date" id="form3Example2" class="input-line" />
-                          <label class="form-label" for="form3Example2">Fecha de Nacimiento</label>
+                          <%= f.date_field :fecha_nacimiento, class: 'input-line'%>
+                          <label class="form-label" for="form3Example4">Fecha de Nacimiento</label><br />
                         </div>
                       </div>
                       <div class="col-md-4 mb-6">
                         <div class="form-outline">
-                          <input type="date" id="form3Example2" class="input-line" />
-                          <label class="form-label" for="form3Example2">Fecha de Ingreso</label>
+                          <%= f.date_field :fecha_ingreso, class: 'input-line'%>
+                          <label class="form-label" for="form3Example4">Fecha de Ingreso</label><br />
                         </div>
                       </div>
                     </div>
-
+<!--
+                    <div class="col-md-4 mb-6">
+                      <div class= "form-outline">
+                        <%= f.fields_for :childs, @childs do |c| %>
+                          <%= c.text_field :name %>
+                        <% end %>
+                        <label class="form-label" for="form3Example4">Nombre del Gimnasio</label><br />
+                      </div>
+                    </div>
+                    -->
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-line' %>
